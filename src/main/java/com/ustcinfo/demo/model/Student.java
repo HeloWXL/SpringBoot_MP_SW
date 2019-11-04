@@ -9,12 +9,10 @@ public class Student {
 
     @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
-
     private String name;
-
     private Integer age;
-
     private String sex;
-
     private String school;
+    private String createTime;
+
 }

@@ -7,5 +7,6 @@
     <result column="age" property="age" jdbcType="INTEGER" />
     <result column="sex" property="sex" jdbcType="VARCHAR" />
     <result column="school" property="school" jdbcType="VARCHAR" />
+      <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
   </resultMap>
 </mapper>

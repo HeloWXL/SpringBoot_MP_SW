@@ -4,10 +4,13 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.ustcinfo.demo.mapper.StudentMapper;
 import com.ustcinfo.demo.model.Student;
 import com.ustcinfo.demo.service.StudentService;
+import com.ustcinfo.demo.vo.StudentScoreVo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author wangxl
@@ -52,8 +55,21 @@ public class StudentServiceImpl implements StudentService {
 
 
   @Override
-  public List<Student> getStudentByPage() {
+  public List<Student> getStudentList(String sName, String sSex) {
+    Map<String, Object> map = new HashMap<>();
+    if (!("").equals(sName) && sName != null) {
+      map.put("sname", sName);
+    }
+    if (!("").equals(sSex) && sSex == null) {
+      map.put("ssex", sName);
+    }
+    List<Student> list = studentMapper.selectByMap(map);
+    return list;
+  }
 
+
+  @Override
+  public List<StudentScoreVo> getStudentScore(int studentId) {
     return null;
   }
 

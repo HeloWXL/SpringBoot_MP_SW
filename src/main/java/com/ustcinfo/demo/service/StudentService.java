@@ -1,6 +1,7 @@
 package com.ustcinfo.demo.service;
 
 import com.ustcinfo.demo.model.Student;
+import com.ustcinfo.demo.vo.StudentScoreVo;
 
 import java.util.List;
 
@@ -51,11 +52,19 @@ public interface StudentService {
 
 
   /**
-   * 分页查询学生列表
-   *
+   * 条件查询学生
+   * @param sName,sSex
    * @return
    */
-  List<Student> getStudentByPage();
+  List<Student> getStudentList(String sName, String sSex);
+
+
+  /**
+   * 根据学生的id查询学生的成绩相关信息
+   * @param studentId
+   * @return
+   */
+  List<StudentScoreVo> getStudentScore(int studentId);
 
 
 }
