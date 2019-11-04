@@ -70,7 +70,7 @@ public class StudentServiceImpl implements StudentService {
 
   @Override
   public List<StudentScoreVo> getStudentScore(int studentId) {
-    return null;
+    return studentMapper.getStudentScore(studentId);
   }
 
 
